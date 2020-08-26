@@ -24,12 +24,6 @@ namespace API_ANSPRICING.Services
         }
         public Tag EditTag(Tag tag)
         {
-            using(DatabaseContext db = new DatabaseContext())
-            {
-                tag.station = db.stations.AsNoTracking().FirstOrDefault(x => x.id == tag.StationId);
-                db.tags.Update(tag);
-                db.SaveChanges();
-            }
 
             var img = CreateBMP(tag);
             Send(img, tag);
@@ -105,7 +99,7 @@ namespace API_ANSPRICING.Services
             Result r0 = Server.Instance.Send(tag.station.shopCode, tag.station.stationID, t0, true, true);
 
 
-            logger.LogInformation("Tag " + tag.id + " Station " + tag.station.Name);
+            logger.LogInformation("Tag " + tag.tagId + " Station " + tag.station.Name);
             logger.LogInformation(JsonConvert.SerializeObject(tag));
             logger.LogInformation(r0.ToString());
 
