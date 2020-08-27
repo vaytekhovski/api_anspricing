@@ -120,12 +120,12 @@ namespace API_ANSPRICING.Services
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Instance_ResultEventHandler(object sender, ResultEventArgs e)
+        private static void Instance_ResultEventHandler(object sender, ResultEventArgs e)
         {
-            logger.LogInformation("Shop Code:{0}, AP:{1}, Result Type:{2}, Count:{3}", e.ShopCode, e.StationID, e.ResultList, e.ResultList.Count);
+            Console.WriteLine("Shop Code:{0}, AP:{1}, Result Type:{2}, Count:{3}", e.ShopCode, e.StationID, e.ResultList, e.ResultList.Count);
             foreach (var item in e.ResultList)
             {
-                logger.LogInformation(" >> Tag ID:{0}, Status:{1}, Temperature:{2}, Power:{3}, Signal:{4}, Key: {5},Token:{6}",
+                Console.WriteLine(" >> Tag ID:{0}, Status:{1}, Temperature:{2}, Power:{3}, Signal:{4}, Key: {5},Token:{6}",
                     item.TagID, item.TagStatus, item.Temperature, item.PowerValue, item.Signal, item.ResultType, item.Token);
             }
         }
@@ -135,9 +135,9 @@ namespace API_ANSPRICING.Services
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Instance_StationEventHandler(object sender, StationEventArgs e)
+        private static void Instance_StationEventHandler(object sender, StationEventArgs e)
         {
-            logger.LogInformation("Shop Code:{0} AP: {1} IP:{2} Online:{3}", e.Shop, e.ID, e.IP, e.Online);
+            Console.WriteLine("Shop Code:{0} AP: {1} IP:{2} Online:{3}", e.Shop, e.ID, e.IP, e.Online);
         }
     }
 }
