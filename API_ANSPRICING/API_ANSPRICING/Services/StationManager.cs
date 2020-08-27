@@ -24,6 +24,7 @@ namespace API_ANSPRICING.Services
         }
         public Tag EditTag(Tag tag)
         {
+            logger.LogInformation("Entred tag with name " + tag.name);
             var img = CreateBMP(tag);
             Send(img, tag);
 
