@@ -24,7 +24,6 @@ namespace API_ANSPRICING.Services
         }
         public Tag EditTag(Tag tag)
         {
-
             var img = CreateBMP(tag);
             Send(img, tag);
 
@@ -34,21 +33,28 @@ namespace API_ANSPRICING.Services
 
         private Bitmap CreateBMP(Tag tag)
         {
-            Bitmap image = new Bitmap(300, 300);
-            var font = new Font("Arial Black", 24, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontName = new Font("Arial Black", 16, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 14, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 28, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
+
+            Bitmap image = new Bitmap(213, 200);
             var graphics = Graphics.FromImage(image);
 
-            graphics.FillRectangle(Brushes.Red, 0, 0, 300, 35);
+            graphics.FillRectangle(Brushes.Red, 0, 0, 213, 20);
 
-            graphics.DrawString(tag.name, font, Brushes.White, new Point(50, 0));
+            graphics.DrawString(tag.name, fontName, Brushes.White, new Point(70, 0));
 
-            font = new Font("Arial", 28, FontStyle.Regular, GraphicsUnit.Pixel);
-            graphics.DrawString(tag.price, font, Brushes.Black, new Point(100, 34));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(145, 25));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(160, 45));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(120, 65));
 
-            font = new Font("Calibri", 13, FontStyle.Regular, GraphicsUnit.Pixel);
-            graphics.DrawString(tag.description1, font, Brushes.Black, new Point(0, 50));
-            graphics.DrawString(tag.description2, font, Brushes.Black, new Point(0, 65));
-            graphics.DrawString(tag.description3, font, Brushes.Black, new Point(0, 80));
+            graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 25));
+            graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 40));
+            graphics.DrawString(tag.description3, fontDescription, Brushes.Black, new Point(3, 55));
+            graphics.DrawString(tag.description4, fontDescription, Brushes.Black, new Point(3, 70));
+            graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 85));
 
             return image;
 
