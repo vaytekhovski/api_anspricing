@@ -49,7 +49,7 @@ namespace API_ANSPRICING.Services
 
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(70, 0));
 
-            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(145, 25));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(135, 25));
             graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(160, 45));
             graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(120, 65));
 
