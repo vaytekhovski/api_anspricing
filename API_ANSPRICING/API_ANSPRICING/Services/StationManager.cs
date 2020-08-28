@@ -22,15 +22,12 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public Tag EditTag(Tag tag)
+        public string EditTag(Tag tag)
         {
-
-
             logger.LogInformation("Entred tag with name " + tag.name);
             var img = CreateBMP(tag);
-            Send(img, tag);
 
-            return tag;
+            return Send(img, tag).ToString();
         }
 
 
@@ -63,7 +60,7 @@ namespace API_ANSPRICING.Services
 
         }
 
-        private void Send(Bitmap image, Tag tag)
+        private Result Send(Bitmap image, Tag tag)
         {
             TagEntity t0 = new TagEntity
             {
@@ -104,6 +101,7 @@ namespace API_ANSPRICING.Services
             logger.LogInformation(JsonConvert.SerializeObject(tag));
             logger.LogInformation(r0.ToString());
 
+            return r0;
         }
 
 
