@@ -22,12 +22,12 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public string EditTag(Tag tag)
+        public Result EditTag(Tag tag)
         {
             logger.LogInformation("Entred tag with name " + tag.name);
             var img = CreateBMP(tag);
 
-            return Send(img, tag).ToString();
+            return Send(img, tag);
         }
 
 

@@ -26,15 +26,8 @@ namespace API_ANSPRICING.Controllers
         {
             IActionResult response = Unauthorized();
 
-            Tag result = StationManager.EditTag(tag);
-            if (result != null)
-            {
-                response = Ok(new { tag = tag });
-            }
-            else
-            {
-                response = BadRequest(new { tag = "some error" });
-            }
+            var result = StationManager.EditTag(tag);
+            response = Ok(new { result = result });
 
             return response;
         }
