@@ -24,6 +24,8 @@ namespace API_ANSPRICING.Services
         }
         public Tag EditTag(Tag tag)
         {
+
+
             logger.LogInformation("Entred tag with name " + tag.name);
             var img = CreateBMP(tag);
             Send(img, tag);
@@ -103,6 +105,10 @@ namespace API_ANSPRICING.Services
                 }
             };
 
+            Server.Instance.StationEventHandler += Instance_StationEventHandler;
+            Server.Instance.ResultEventHandler += Instance_ResultEventHandler;
+
+            Server.Instance.Start(1234);
             Result r0 = Server.Instance.Send(tag.station.shopCode, tag.station.stationID, t0, true, true);
 
 
