@@ -89,19 +89,7 @@ namespace API_ANSPRICING.Services
                         H = 1,
                         ID = 1,
                         Color = FontColor.Red
-                    },
-
-                    new BarcodeEntity
-                    {
-                        BarcodeType = BarcodeType.Code128,
-                        Color = FontColor.Black,
-                        Data = tag.QrCode,
-                        Height = 5,
-                        ID = 3,
-                        InvertColor = false,
-                        W = 70,
-                        H = 70,
-                    },
+                    }
                 }
             };
 
