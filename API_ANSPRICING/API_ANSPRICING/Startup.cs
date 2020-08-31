@@ -31,16 +31,6 @@ namespace API_ANSPRICING
         {
             services.AddSingleton(typeof(StationManager));
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder =>
-                    builder.WithOrigins("http://134.122.64.43:7766")
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-                    .Build());
-            });
 
             services.AddControllers();
 
@@ -72,7 +62,10 @@ namespace API_ANSPRICING
             //app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(builder => builder.WithOrigins("http://134.122.64.43:7766")
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                .WithExposedHeaders("custom-header"));
 
             app.UseAuthentication();
             app.UseAuthorization();
