@@ -22,7 +22,7 @@ namespace API_ANSPRICING.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult EditTag(string Json)
+        public IActionResult EditTag([FromBody]string Json)
         {
             IActionResult response = Unauthorized();
 
