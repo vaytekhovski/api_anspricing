@@ -32,7 +32,7 @@ namespace API_ANSPRICING.Services
                 tag.station = db.stations.AsNoTracking().FirstOrDefault(x => x.id == tag.StationId);
             }
 
-            logger.LogInformation("Tag: " + tag);
+            logger.LogInformation("Tag: " + tag.ToString());
             var img = CreateBMP(tag);
 
             return Send(img, tag);
