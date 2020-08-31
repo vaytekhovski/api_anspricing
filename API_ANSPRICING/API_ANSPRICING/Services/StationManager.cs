@@ -24,6 +24,7 @@ namespace API_ANSPRICING.Services
         }
         public Result EditTag(Guid TagId)
         {
+            logger.LogInformation("Tag Id: " + TagId);
             Tag tag = new Tag();
             using(DatabaseContext db = new DatabaseContext())
             {
@@ -31,7 +32,7 @@ namespace API_ANSPRICING.Services
                 tag.station = db.stations.AsNoTracking().FirstOrDefault(x => x.id == tag.StationId);
             }
 
-            logger.LogInformation("Entred tag with name " + tag.name);
+            logger.LogInformation("Tag: " + tag);
             var img = CreateBMP(tag);
 
             return Send(img, tag);
