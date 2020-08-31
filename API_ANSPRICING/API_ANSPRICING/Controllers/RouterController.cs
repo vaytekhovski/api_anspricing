@@ -22,11 +22,11 @@ namespace API_ANSPRICING.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult EditTag([FromBody]Tag tag)
+        public IActionResult EditTag([FromBody]Guid TagId)
         {
             IActionResult response = Unauthorized();
 
-            var result = StationManager.EditTag(tag);
+            var result = StationManager.EditTag(TagId);
             response = Ok(new { result = result });
 
             return response;

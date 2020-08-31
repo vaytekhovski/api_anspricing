@@ -22,8 +22,15 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public Result EditTag(Tag tag)
+        public Result EditTag(Guid TagId)
         {
+            Tag tag = new Tag();
+            using(DatabaseContext db = new DatabaseContext())
+            {
+                tag = db.tags.AsNoTracking().FirstOrDefault(x => x.id == TagId);
+                tag.station = db.stations.AsNoTracking().FirstOrDefault(x => x.id == tag.StationId);
+            }
+
             logger.LogInformation("Entred tag with name " + tag.name);
             var img = CreateBMP(tag);
 
