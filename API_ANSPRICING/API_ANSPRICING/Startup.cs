@@ -35,7 +35,7 @@ namespace API_ANSPRICING
             {
                 options.AddPolicy("CorsPolicy",
                     builder =>
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("http://134.122.64.43:7766")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()
