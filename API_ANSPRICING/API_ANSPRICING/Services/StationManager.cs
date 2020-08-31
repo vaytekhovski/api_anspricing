@@ -22,15 +22,9 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public Result EditTag(Guid TagId)
+        public Result EditTag(string Json)
         {
-            logger.LogInformation("Tag Id: " + TagId);
-            Tag tag = new Tag();
-            using(DatabaseContext db = new DatabaseContext())
-            {
-                tag = db.tags.AsNoTracking().FirstOrDefault(x => x.id == TagId);
-                tag.station = db.stations.AsNoTracking().FirstOrDefault(x => x.id == tag.StationId);
-            }
+            Tag tag = JsonConvert.DeserializeObject<Tag>(Json);
 
             logger.LogInformation("Tag: " + tag.ToString());
             var img = CreateBMP(tag);
