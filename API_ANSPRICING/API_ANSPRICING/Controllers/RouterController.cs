@@ -21,8 +21,8 @@ namespace API_ANSPRICING.Controllers
         }
 
 
-        [HttpPost("update")]
-        public IActionResult EditTag([FromBody]Guid TagId)
+        [HttpPost("update/{TagId}")]
+        public IActionResult EditTag(Guid TagId)
         {
             IActionResult response = Unauthorized();
 
