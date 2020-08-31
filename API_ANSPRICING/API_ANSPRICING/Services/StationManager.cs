@@ -24,6 +24,7 @@ namespace API_ANSPRICING.Services
         }
         public Result EditTag(string Json)
         {
+            logger.LogInformation("JsonTag: " + Json);
             Tag tag = JsonConvert.DeserializeObject<Tag>(Json);
 
             logger.LogInformation("Tag: " + tag.ToString());
