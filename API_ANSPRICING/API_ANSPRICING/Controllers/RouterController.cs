@@ -32,5 +32,11 @@ namespace API_ANSPRICING.Controllers
             return response;
         }
 
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            return Ok("It work");
+        }
+
     }
 }
