@@ -28,25 +28,54 @@ namespace API_ANSPRICING.Services
             Tag tag = JsonConvert.DeserializeObject<Tag>(Json);
 
             logger.LogInformation("Tag: " + tag.ToString());
-            var img = CreateBMP(tag);
+
+            Bitmap img = null;
+
+            switch (tag.type)
+            {
+                case ESLType.ESL154:
+                    break;
+                case ESLType.ESL213:
+                    img = CreateBMPForESL213(tag);
+                    break;
+                case ESLType.ESL290:
+                    break;
+                case ESLType.ESL420:
+                    break;
+                case ESLType.ESL750:
+                    break;
+                default:
+                    break;
+            }
 
             return Send(img, tag);
         }
 
-
-        private Bitmap CreateBMP(Tag tag)
+        private Bitmap CreateBMPForESL154(Tag tag)
         {
+
+        }
+
+        private Bitmap CreateBMPForESL213(Tag tag)
+        {
+            // Шрифты, тебе нужно будет менять только размер шрифта
             var fontName = new Font("Arial Black", 16, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontCountry = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontOldPrice = new Font("Tahoma", 14, FontStyle.Strikeout, GraphicsUnit.Pixel);
             var fontPrice = new Font("Arial Black", 28, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontDescription = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
 
-            Bitmap image = new Bitmap(213, 200);
+            // Размер ценника (хз откуда взял)
+            int width = 213;
+            int height = 200;
+
+            Bitmap image = new Bitmap(width, height);
             var graphics = Graphics.FromImage(image);
 
-            graphics.FillRectangle(Brushes.Red, 0, 0, 213, 20);
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 20);
 
+            // Название товара по центру
+            int center = (width / 2) - (tag.name.Length / 2);
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(70, 0));
 
             graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(135, 25));
@@ -60,6 +89,20 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 85));
 
             return image;
+        }
+
+        private Bitmap CreateBMPForESL290(Tag tag)
+        {
+
+        }
+
+        private Bitmap CreateBMPForESL420(Tag tag)
+        {
+
+        }
+
+        private Bitmap CreateBMPForESL750(Tag tag)
+        {
 
         }
 
