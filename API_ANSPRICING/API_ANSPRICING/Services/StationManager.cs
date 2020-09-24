@@ -32,15 +32,19 @@ namespace API_ANSPRICING.Services
             switch (tag.type)
             {
                 case ESLType.ESL154:
+                    img = CreateBMPForESL154(tag);
                     break;
                 case ESLType.ESL213:
                     img = CreateBMPForESL213(tag);
                     break;
                 case ESLType.ESL290:
+                    img = CreateBMPForESL290(tag);
                     break;
                 case ESLType.ESL420:
+                    img = CreateBMPForESL420(tag);
                     break;
                 case ESLType.ESL750:
+                    img = CreateBMPForESL750(tag);
                     break;
                 default:
                     break;
@@ -51,7 +55,37 @@ namespace API_ANSPRICING.Services
 
         private Bitmap CreateBMPForESL154(Tag tag)
         {
-            return null;
+            // Шрифты, тебе нужно будет менять только размер шрифта
+            var fontName = new Font("Arial Black", 22, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 20, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 20, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 16, FontStyle.Regular, GraphicsUnit.Pixel);
+
+            // Размер ценника (хз откуда взял)
+            int width = 154;
+            int height = 154;
+
+            Bitmap image = new Bitmap(width, height);
+            var graphics = Graphics.FromImage(image);
+
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 32);
+
+            // Название товара по центру
+            int center = (width / 2) - (tag.name.Length / 2);
+            graphics.DrawString(tag.name, fontName, Brushes.White, new Point(36, 0));
+
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(80, 40));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(80, 65));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(40, 85));
+
+            graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 25));
+            graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 40));
+            graphics.DrawString(tag.description3, fontDescription, Brushes.Black, new Point(3, 55));
+            graphics.DrawString(tag.description4, fontDescription, Brushes.Black, new Point(3, 70));
+            graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 85));
+
+            return image;
         }
 
         private Bitmap CreateBMPForESL213(Tag tag)
@@ -91,19 +125,114 @@ namespace API_ANSPRICING.Services
 
         private Bitmap CreateBMPForESL290(Tag tag)
         {
-            return null;
+            // Шрифты, тебе нужно будет менять только размер шрифта
+            var fontName = new Font("Arial Black", 25, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 16, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 16, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 30, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 16, FontStyle.Regular, GraphicsUnit.Pixel);
+
+            // Размер ценника (хз откуда взял)
+            int width = 294;
+            int height = 213;
+
+            Bitmap image = new Bitmap(width, height);
+            var graphics = Graphics.FromImage(image);
+
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 30);
+
+            // Название товара по центру
+            int center = (width / 2) - (tag.name.Length / 2);
+            graphics.DrawString(tag.name, fontName, Brushes.White, new Point(75, 0));
+
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(220, 35));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(240, 65));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(180, 85));
+
+            graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 35));
+            graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 50));
+            graphics.DrawString(tag.description3, fontDescription, Brushes.Black, new Point(3, 65));
+            graphics.DrawString(tag.description4, fontDescription, Brushes.Black, new Point(3, 80));
+            graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 95));
+
+            return image;
 
         }
 
         private Bitmap CreateBMPForESL420(Tag tag)
         {
-            return null;
+            // Шрифты, тебе нужно будет менять только размер шрифта
+            var fontName = new Font("Arial Black", 25, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 18, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 34, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
+
+            // Размер ценника (хз откуда взял)
+            int width = 420;
+            int height = 420;
+
+            Bitmap image = new Bitmap(width, height);
+            var graphics = Graphics.FromImage(image);
+
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 40);
+
+            // Название товара по центру
+            int center = (width / 2) - (tag.name.Length / 2);
+            graphics.DrawString(tag.name, fontName, Brushes.White, new Point(75, 0));
+
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 55));
+            graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 75));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(195, 60));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(135, 75));
+
+            graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 140));
+            graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 160));
+            graphics.DrawString(tag.description3, fontDescription, Brushes.Black, new Point(3, 180));
+            graphics.DrawString(tag.description4, fontDescription, Brushes.Black, new Point(3, 200));
+            graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 220));
+            graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 240));
+            graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
+            return image;
 
         }
 
         private Bitmap CreateBMPForESL750(Tag tag)
         {
-            return null;
+            // Шрифты, тебе нужно будет менять только размер шрифта
+            var fontName = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 24, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 26, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
+
+            // Размер ценника (хз откуда взял)
+            int width = 750;
+            int height = 600;
+
+            Bitmap image = new Bitmap(width, height);
+            var graphics = Graphics.FromImage(image);
+
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 55);
+
+            // Название товара по центру
+            int center = (width / 2) - (tag.name.Length / 2);
+            graphics.DrawString(tag.name, fontName, Brushes.White, new Point(75, 0));
+
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 70));
+            graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 100));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(280, 70));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(225, 105));
+
+            graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 180));
+            graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 200));
+            graphics.DrawString(tag.description3, fontDescription, Brushes.Black, new Point(3, 220));
+            graphics.DrawString(tag.description4, fontDescription, Brushes.Black, new Point(3, 240));
+            graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 260));
+            graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 280));
+            graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
+            return image;
+
 
         }
 
