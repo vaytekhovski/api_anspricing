@@ -22,10 +22,8 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public Result EditTag(string Json)
+        public Result EditTag(Tag tag)
         {
-            logger.LogInformation("JsonTag: " + Json);
-            Tag tag = JsonConvert.DeserializeObject<Tag>(Json);
 
             logger.LogInformation("Tag: " + tag.ToString());
 
@@ -53,7 +51,7 @@ namespace API_ANSPRICING.Services
 
         private Bitmap CreateBMPForESL154(Tag tag)
         {
-
+            return null;
         }
 
         private Bitmap CreateBMPForESL213(Tag tag)
@@ -93,16 +91,19 @@ namespace API_ANSPRICING.Services
 
         private Bitmap CreateBMPForESL290(Tag tag)
         {
+            return null;
 
         }
 
         private Bitmap CreateBMPForESL420(Tag tag)
         {
+            return null;
 
         }
 
         private Bitmap CreateBMPForESL750(Tag tag)
         {
+            return null;
 
         }
 
