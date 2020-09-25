@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GITHUB REPOS\\APIANS\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj": {}
+    "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj": {}
   },
   "projects": {
-    "D:\\GITHUB REPOS\\APIANS\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj": {
+    "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GITHUB REPOS\\APIANS\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
+        "projectUniqueName": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
         "projectName": "API_ANSPRICING",
-        "projectPath": "D:\\GITHUB REPOS\\APIANS\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
-        "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
-        "outputPath": "D:\\GITHUB REPOS\\APIANS\\API_ANSPRICING\\API_ANSPRICING\\obj\\",
+        "projectPath": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
+        "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
+        "outputPath": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\arsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -86,6 +88,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.3, 3.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -94,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

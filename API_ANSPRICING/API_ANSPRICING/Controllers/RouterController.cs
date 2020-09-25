@@ -6,6 +6,7 @@ using API_ANSPRICING.Models;
 using API_ANSPRICING.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace API_ANSPRICING.Controllers
 {
@@ -22,8 +23,9 @@ namespace API_ANSPRICING.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult EditTag([FromBody]Tag tag)
+        public IActionResult EditTag([FromBody]string json)
         {
+            Tag tag = JsonConvert.DeserializeObject<Tag>(json);
             IActionResult response = Unauthorized();
 
             var result = StationManager.EditTag(tag);

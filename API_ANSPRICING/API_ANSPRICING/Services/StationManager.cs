@@ -183,8 +183,8 @@ namespace API_ANSPRICING.Services
 
             graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 55));
             graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 75));
-            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(195, 60));
-            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(135, 75));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(150, 60));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(80, 75));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 140));
             graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 160));
@@ -193,6 +193,7 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 220));
             graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 240));
             graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
+            graphics.DrawImage(Image.FromFile("screwdriver.png"), 230, 60, 150, 150);
             return image;
 
         }
@@ -231,6 +232,7 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 260));
             graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 280));
             graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
+            graphics.DrawImage(Image.FromFile("screwdriver.png"), 400, 70, 220, 220);
             return image;
 
 
