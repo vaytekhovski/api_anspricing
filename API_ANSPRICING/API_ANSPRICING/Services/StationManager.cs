@@ -27,7 +27,7 @@ namespace API_ANSPRICING.Services
             Tag tag = new Tag();
             using(DatabaseContext db = new DatabaseContext())
             {
-                tag = db.tags.AsNoTracking().Include(x => x.station).Where(x => x.id == TagId).FirstOrDefault();
+                tag = db.tags.AsNoTracking().Where(x => x.id == TagId).Include(x=>x.station).FirstOrDefault();
             }
 
             if(tag == null)
