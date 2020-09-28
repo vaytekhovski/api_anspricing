@@ -22,14 +22,9 @@ namespace API_ANSPRICING.Services
         {
             this.logger = logger;
         }
-        public Result EditTag(Guid TagId)
+        public Result EditTag(Tag tag)
         {
-            Tag tag = new Tag();
-            using(DatabaseContext db = new DatabaseContext())
-            {
-                tag = db.tags.AsNoTracking().Where(x => x.id == TagId).Include(x=>x.station).FirstOrDefault();
-            }
-
+            
             if(tag == null)
             {
                 throw new NullReferenceException();
