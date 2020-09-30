@@ -24,6 +24,11 @@ namespace API_ANSPRICING.Services
         }
         public Result EditTag(Tag tag)
         {
+            
+            if(tag == null)
+            {
+                throw new NullReferenceException();
+            }
 
             logger.LogInformation("Tag: " + tag.ToString());
 

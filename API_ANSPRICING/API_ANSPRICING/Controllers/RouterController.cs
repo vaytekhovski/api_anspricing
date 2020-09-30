@@ -28,9 +28,15 @@ namespace API_ANSPRICING.Controllers
             Tag tag = JsonConvert.DeserializeObject<Tag>(json);
             IActionResult response = Unauthorized();
 
-            var result = StationManager.EditTag(tag);
-            response = Ok(new { result = result });
-
+            try
+            {
+                var result = StationManager.EditTag(tag);
+                response = Ok(new { result = result });
+            }
+            catch (NullReferenceException e)
+            {
+                response = BadRequest(e.Message);
+            }
             return response;
         }
 
