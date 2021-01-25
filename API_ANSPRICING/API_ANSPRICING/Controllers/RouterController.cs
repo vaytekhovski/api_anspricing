@@ -30,8 +30,21 @@ namespace API_ANSPRICING.Controllers
 
             try
             {
-                var result = StationManager.EditTag(tag);
-                response = Ok(new { result = result });
+                eTagTech.SDK.Core.Enum.Result result = StationManager.EditTag(tag);
+
+                if (result == eTagTech.SDK.Core.Enum.Result.UnregisteredStation)
+                {
+                    response = BadRequest(result);
+                }
+                else if (result == eTagTech.SDK.Core.Enum.Result.StationBusy)
+                {
+                    response = BadRequest(result);
+                }
+                else
+                {
+
+                    response = Ok(result);
+                }
             }
             catch (NullReferenceException e)
             {

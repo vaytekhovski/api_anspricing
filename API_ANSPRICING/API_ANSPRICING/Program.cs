@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API_ANSPRICING.Services;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +16,7 @@ namespace API_ANSPRICING
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args)
-                .UseUrls("http://*:7766")
+                //.UseUrls("http://*:7766")
                 .Build();
 
 

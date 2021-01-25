@@ -7,6 +7,7 @@ namespace API_ANSPRICING.Models
 {
     public class Station
     {
+       
         public Guid id { get; set; }
         public string Name { get; set; }
         public string IP { get; set; }

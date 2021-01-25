@@ -9,6 +9,7 @@ namespace API_ANSPRICING.Models
 {
     public class Tag
     {
+
         public Guid id { get; set; }
         public Guid StationId { get; set; }
         [ForeignKey("StationId")]

@@ -7990,11 +7990,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arsen\\Documents\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
+      "projectUniqueName": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
       "projectName": "API_ANSPRICING",
-      "projectPath": "C:\\Users\\arsen\\Documents\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
+      "projectPath": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\API_ANSPRICING.csproj",
       "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arsen\\Documents\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\obj\\",
+      "outputPath": "D:\\REPOSITORY\\api_anspricing\\API_ANSPRICING\\API_ANSPRICING\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

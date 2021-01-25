@@ -62,13 +62,14 @@ namespace API_ANSPRICING
             //app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors(builder => builder.WithOrigins("http://134.122.64.43:7766")
+            app.UseCors(builder => builder.WithOrigins("http://134.122.64.43:6712")
                                 .AllowAnyMethod()
                                 .AllowAnyHeader()
                                 .WithExposedHeaders("custom-header"));
 
             app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

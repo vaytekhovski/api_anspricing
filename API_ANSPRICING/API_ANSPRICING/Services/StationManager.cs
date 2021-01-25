@@ -17,10 +17,14 @@ namespace API_ANSPRICING.Services
 {
     public class StationManager
     {
+
+
         private readonly ILogger<StationManager> logger;
         public StationManager(ILogger<StationManager> logger)
         {
             this.logger = logger;
+
+            Server.Instance.Start(1234);
         }
         public Result EditTag(Tag tag)
         {
@@ -209,7 +213,7 @@ namespace API_ANSPRICING.Services
             var fontName = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontCountry = new Font("Tahoma", 24, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontOldPrice = new Font("Tahoma", 26, FontStyle.Strikeout, GraphicsUnit.Pixel);
-            var fontPrice = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 46, FontStyle.Regular, GraphicsUnit.Pixel);
             var fontDescription = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
 
             // Размер ценника (хз откуда взял)
@@ -275,8 +279,7 @@ namespace API_ANSPRICING.Services
 
             Server.Instance.StationEventHandler += Instance_StationEventHandler;
             Server.Instance.ResultEventHandler += Instance_ResultEventHandler;
-
-            Server.Instance.Start(1234);
+;
             Result r0 = Server.Instance.Send(tag.station.shopCode, tag.station.stationID, t0, true, true);
 
 
@@ -287,7 +290,7 @@ namespace API_ANSPRICING.Services
             return r0;
         }
 
-
+        
 
 
         /// <summary>
