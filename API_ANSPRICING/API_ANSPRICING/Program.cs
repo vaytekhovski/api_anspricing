@@ -16,7 +16,7 @@ namespace API_ANSPRICING
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args)
-                //.UseUrls("http://*:7766")
+                .UseUrls("http://*:7766")
                 .Build();
 
 
