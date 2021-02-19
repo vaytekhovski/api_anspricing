@@ -171,14 +171,14 @@ namespace API_ANSPRICING.Services
         private Bitmap CreateBMPForESL420(Tag tag)
         {
             // Шрифты, тебе нужно будет менять только размер шрифта
-            var fontName = new Font("Arial Black", 25, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontCountry = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontOldPrice = new Font("Tahoma", 18, FontStyle.Strikeout, GraphicsUnit.Pixel);
-            var fontPrice = new Font("Arial Black", 34, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontDescription = new Font("Tahoma", 14, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontName = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 24, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 24, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 42, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
 
             // Размер ценника (хз откуда взял)
-            int width = 420;
+            int width = 600;
             int height = 420;
 
             Bitmap image = new Bitmap(width, height);
@@ -202,7 +202,7 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 220));
             graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 240));
             graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
-            graphics.DrawImage(Image.FromFile("screwdriver.png"), 230, 60, 150, 150);
+            //graphics.DrawImage(Image.FromFile("screwdriver.png"), 230, 60, 150, 150);
             return image;
 
         }
@@ -210,20 +210,20 @@ namespace API_ANSPRICING.Services
         private Bitmap CreateBMPForESL750(Tag tag)
         {
             // Шрифты, тебе нужно будет менять только размер шрифта
-            var fontName = new Font("Arial Black", 32, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontCountry = new Font("Tahoma", 24, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontOldPrice = new Font("Tahoma", 26, FontStyle.Strikeout, GraphicsUnit.Pixel);
-            var fontPrice = new Font("Arial Black", 46, FontStyle.Regular, GraphicsUnit.Pixel);
-            var fontDescription = new Font("Tahoma", 18, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontName = new Font("Arial Black", 46, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontCountry = new Font("Tahoma", 32, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontOldPrice = new Font("Tahoma", 46, FontStyle.Strikeout, GraphicsUnit.Pixel);
+            var fontPrice = new Font("Arial Black", 75, FontStyle.Regular, GraphicsUnit.Pixel);
+            var fontDescription = new Font("Tahoma", 24, FontStyle.Regular, GraphicsUnit.Pixel);
 
             // Размер ценника (хз откуда взял)
-            int width = 750;
+            int width = 1200;
             int height = 600;
 
             Bitmap image = new Bitmap(width, height);
             var graphics = Graphics.FromImage(image);
 
-            graphics.FillRectangle(Brushes.Red, 0, 0, width, 55);
+            graphics.FillRectangle(Brushes.Red, 0, 0, width, 65);
 
             // Название товара по центру
             int center = (width / 2) - (tag.name.Length / 2);
@@ -241,7 +241,7 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.description5, fontDescription, Brushes.Black, new Point(3, 260));
             graphics.DrawString(tag.description6, fontDescription, Brushes.Black, new Point(3, 280));
             graphics.DrawString(tag.imgSource, fontDescription, Brushes.Black, new Point(300, 50));
-            graphics.DrawImage(Image.FromFile("screwdriver.png"), 400, 70, 220, 220);
+            //graphics.DrawImage(Image.FromFile("screwdriver.png"), 400, 70, 220, 220);
             return image;
 
 
