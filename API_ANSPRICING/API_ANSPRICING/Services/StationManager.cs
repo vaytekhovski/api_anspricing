@@ -193,7 +193,7 @@ namespace API_ANSPRICING.Services
             graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 55));
             graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 75));
             graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(200, 60));
-            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(200, 75));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(200, 80));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 140));
             graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 160));
