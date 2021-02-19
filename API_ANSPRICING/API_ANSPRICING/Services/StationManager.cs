@@ -84,7 +84,7 @@ namespace API_ANSPRICING.Services
             int center = (width / 2) - (tag.name.Length / 2);
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(36, 0));
 
-            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(70, 40));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(60, 40));
             graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(70, 65));
             graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(40, 85));
 
@@ -154,7 +154,7 @@ namespace API_ANSPRICING.Services
             int center = (width / 2) - (tag.name.Length / 2);
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(75, 0));
 
-            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(220, 35));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(200, 35));
             graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(240, 65));
             graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(180, 85));
 
@@ -192,8 +192,8 @@ namespace API_ANSPRICING.Services
 
             graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 55));
             graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 75));
-            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(150, 60));
-            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(80, 75));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(200, 60));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(200, 75));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 140));
             graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 160));
@@ -231,8 +231,8 @@ namespace API_ANSPRICING.Services
 
             graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(3, 70));
             graphics.DrawString(tag.manufacturer, fontDescription, Brushes.Black, new Point(3, 100));
-            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(280, 70));
-            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(225, 105));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(320, 70));
+            graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(320, 105));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 180));
             graphics.DrawString(tag.description2, fontDescription, Brushes.Black, new Point(3, 200));
