@@ -84,8 +84,8 @@ namespace API_ANSPRICING.Services
             int center = (width / 2) - (tag.name.Length / 2);
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(36, 0));
 
-            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(80, 40));
-            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(80, 65));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(70, 40));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(70, 65));
             graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(40, 85));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 25));
@@ -119,8 +119,8 @@ namespace API_ANSPRICING.Services
             int center = (width / 2) - (tag.name.Length / 2);
             graphics.DrawString(tag.name, fontName, Brushes.White, new Point(70, 0));
 
-            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(135, 25));
-            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(160, 45));
+            graphics.DrawString(tag.coutry, fontCountry, Brushes.Black, new Point(125, 25));
+            graphics.DrawString(tag.oldPrice, fontOldPrice, Brushes.Black, new Point(150, 45));
             graphics.DrawString(tag.price, fontPrice, Brushes.Red, new Point(120, 65));
 
             graphics.DrawString(tag.description1, fontDescription, Brushes.Black, new Point(3, 25));
